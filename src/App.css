@@ -1,3 +1,25 @@
 .App {
     margin: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: rgb(18, 18, 18);
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #3e3a3a;
+    border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
 }

@@ -20,7 +20,7 @@ const DesktopNavigation = () => {
             <div className="flex items-center gap-x-4">
                 <Link to="/login">
                     <div className="flex items-center gap-x-[4px] py-[3px] px-[10px] rounded-[8px] border-[1px] border-black-140">
-                        <h3 className="font-mono font-bold text-[13px] text-white">
+                        <h3 className="font-bold text-[14px] text-white">
                             Login
                         </h3>
                         <span className="text-[18px] text-white">
@@ -30,7 +30,7 @@ const DesktopNavigation = () => {
                 </Link>
                 <Link to="/signin">
                     <div className="flex items-center gap-x-[4px] py-[3px] px-[10px] rounded-[8px] bg-white">
-                        <h3 className="font-mono font-bold text-[13px] text-black">
+                        <h3 className="font-bold text-[14px] text-black">
                             Sign In
                         </h3>
                         <span className="text-[18px] text-black">
