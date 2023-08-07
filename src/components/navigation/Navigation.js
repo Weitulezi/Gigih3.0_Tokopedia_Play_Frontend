@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from "react"
+import { useLocation } from "react-router-dom"
+
 import DesktopNavigation from "./DesktopNavigation"
 import MobileNavigation from "./MobileNavigation"
 
 const Navigation = () => {
-    const [browserWidth, setBrowserWidth] = useState(window.innerWidth)
     const [isMobileMode, setIsMobileMode] = useState(false)
+    const location = useLocation()
 
     useEffect(() => {
         const updateBrowserWidth = () => {
@@ -13,7 +15,6 @@ const Navigation = () => {
             } else {
                 setIsMobileMode(false)
             }
-            setBrowserWidth(window.innerWidth)
         }
         window.addEventListener("resize", updateBrowserWidth)
         return () => {
@@ -21,13 +22,19 @@ const Navigation = () => {
         }
     })
 
-    return (
-        <nav className="w-full min-h-[10vh] flex items-center text-white">
-            <div className="w-full min-h-[10vh] top-0 fixed flex justify-center items-center bg-black">
-                {!isMobileMode ? <DesktopNavigation /> : <MobileNavigation />}
-            </div>
-        </nav>
-    )
+    if (location.pathname !== "/login") {
+        return (
+            <nav className="w-full min-h-[10vh] flex items-center text-white">
+                <div className="w-full min-h-[10vh] top-0 fixed flex justify-center items-center bg-black border-b-[1px] border-black-40">
+                    {!isMobileMode ? (
+                        <DesktopNavigation />
+                    ) : (
+                        <MobileNavigation />
+                    )}
+                </div>
+            </nav>
+        )
+    }
 }
 
 export default Navigation
