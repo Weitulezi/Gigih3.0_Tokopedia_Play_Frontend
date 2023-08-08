@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 
-const LoginPage = () => {
+const SignInPage = () => {
     const handleForm = (e) => {
         e.preventDefault()
     }
@@ -45,12 +45,12 @@ const LoginPage = () => {
                         className="bg-black border-[2px] border-black-40 py-[6px] px-[12px] rounded-[6px]"
                     />
                     <button className="flex justify-center w-full text-black font-bold bg-[#00CC33] mt-[15px] p-[6px] rounded-[6px]">
-                        Login
+                        Create account
                     </button>
                 </form>
                 <h5 className="w-full text-sm font-thin text-center">
-                    Donn't have an account yet? Sign in{" "}
-                    <Link to="/signin">
+                    Already have an account? login{" "}
+                    <Link to="/login">
                         <span className="text-[#00CC33]">here</span>
                     </Link>
                 </h5>
@@ -73,4 +73,4 @@ const LoginPage = () => {
     )
 }
 
-export default LoginPage
+export default SignInPage

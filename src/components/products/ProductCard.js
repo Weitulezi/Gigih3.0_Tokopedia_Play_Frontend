@@ -19,7 +19,8 @@ const ProductCard = () => {
                     height="auto"
                     className="object-cover"
                     src="/assets/yt-thumbnail.jpg"
-                    alt=""
+                    // src="/assets/bracket-tv.png"
+                    alt="Product's Image example"
                 />
             </div>
             <div className="mx-[14px]">
