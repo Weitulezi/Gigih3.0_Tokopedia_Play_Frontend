@@ -1,5 +1,8 @@
 import React from "react"
 import { Link } from "react-router-dom"
+import { AiOutlineMail } from "react-icons/ai"
+import { RiLockPasswordLine } from "react-icons/ri"
+import { PiVideoBold } from "react-icons/pi"
 
 const LoginPage = () => {
     const handleForm = (e) => {
@@ -8,7 +11,7 @@ const LoginPage = () => {
     return (
         <div className="flex justfiy-center items-center min-h-[100vh] text-white">
             <div
-                className="lg:w-[30%] md:w-[70%] w-[80%] m-[auto] border-[2px] border-black-40 p-8"
+                className="lg:w-[30%] md:w-[70%] w-[80%] m-[auto] border-[2px] border-black-40 p-8 rounded-lg"
                 style={{
                     display: "flex",
                     flexDirection: "column",
@@ -19,9 +22,14 @@ const LoginPage = () => {
             >
                 <div>
                     <Link to="/">
-                        <h1 className="text-2xl m-0 text-center">
-                            Tokopedia Play
-                        </h1>
+                        <div className="flex items-center gap-x-2">
+                            <span className="text-3xl">
+                                <PiVideoBold />
+                            </span>
+                            <h1 className="text-2xl m-0 text-center">
+                                Tokopedia Play
+                            </h1>
+                        </div>
                     </Link>
                 </div>
                 <form
@@ -34,16 +42,33 @@ const LoginPage = () => {
                     }}
                 >
                     <label htmlFor="email">Email</label>
-                    <input
-                        type="email"
-                        name="email"
-                        className="bg-black border-[2px] border-black-40 py-[6px] px-[12px] rounded-[6px]"
-                    />
+                    <div
+                        className="bg-black border-[2px] border-black-40 rounded-[6px]"
+                        style={{ display: "flex", columnGap: "10px" }}
+                    >
+                        <span className="text-black-140 text-[22px] p-[10px] border-r-2 border-black-40">
+                            <AiOutlineMail />
+                        </span>
+                        <input
+                            type="email"
+                            name="email"
+                            className="w-full bg-black border-[none] outline-none px-[5px]"
+                        />
+                    </div>
                     <label htmlFor="password">Password</label>
-                    <input
-                        type="password"
-                        className="bg-black border-[2px] border-black-40 py-[6px] px-[12px] rounded-[6px]"
-                    />
+                    <div
+                        className="text-black-140 bg-black border-[2px] border-black-40 rounded-[6px]"
+                        style={{ display: "flex", columnGap: "10px" }}
+                    >
+                        <span className="text-[22px] p-[10px] border-r-2 border-black-40">
+                            <RiLockPasswordLine />
+                        </span>
+                        <input
+                            type="password"
+                            name="password"
+                            className="w-full bg-black border-[none] outline-none px-[5px]"
+                        />
+                    </div>
                     <button className="flex justify-center w-full text-black font-bold bg-[#00CC33] mt-[15px] p-[6px] rounded-[6px]">
                         Login
                     </button>
