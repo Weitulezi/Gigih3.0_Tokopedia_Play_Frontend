@@ -25,7 +25,7 @@ const Navigation = () => {
     if (location.pathname !== "/login" && location.pathname !== "/signin") {
         return (
             <nav className="w-full min-h-[10vh] flex items-center text-white">
-                <div className="w-full min-h-[10vh] top-0 fixed flex justify-center items-center bg-black border-b-[1px] border-black-40">
+                <div className="z-10 w-full min-h-[10vh] top-0 fixed flex justify-center items-center bg-black border-b-[1px] border-black-40">
                     {!isMobileMode ? (
                         <DesktopNavigation />
                     ) : (
