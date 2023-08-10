@@ -1,9 +1,17 @@
-import React from "react"
+import React, { useContext } from "react"
 import { Link } from "react-router-dom"
 import { PiVideoBold } from "react-icons/pi"
 import SignInForm from "../components/SignInForm"
+import { AuthContext } from "../contexts/userContext"
+import { useHistory } from "react-router-dom"
+import useRedirectLoggedInUser from "../hooks/useRedirectLoggedInUser"
 
 const SignInPage = () => {
+    const { authData } = useContext(AuthContext)
+    const history = useHistory()
+
+    useRedirectLoggedInUser(authData, history)
+
     return (
         <div className="flex justfiy-center items-center min-h-[100vh] text-white">
             <div

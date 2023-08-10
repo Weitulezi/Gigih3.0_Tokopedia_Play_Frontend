@@ -1,6 +1,6 @@
 import React, { useState } from "react"
 
-import createUser from "../utils/auth/createUser"
+import { createUser } from "../utils/auth"
 
 import { AiOutlineMail } from "react-icons/ai"
 import { RiLockPasswordLine } from "react-icons/ri"

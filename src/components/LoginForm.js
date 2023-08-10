@@ -1,11 +1,14 @@
-import React, { useState } from "react"
+import React, { useContext, useState } from "react"
 
 import { AiOutlineMail } from "react-icons/ai"
 import { RiLockPasswordLine } from "react-icons/ri"
+import { AuthContext } from "../contexts/userContext"
 
-import loginUser from "../utils/auth/loginUser"
+import { loginUser } from "../utils/auth"
 
 const LoginForm = () => {
+    const { setAuthData } = useContext(AuthContext)
+
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [success, setSuccess] = useState(false)
@@ -20,6 +23,7 @@ const LoginForm = () => {
             setPassword,
             setMessage,
             setSuccess,
+            setAuthData,
         )
     }
 

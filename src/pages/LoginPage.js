@@ -1,14 +1,17 @@
-import React from "react"
+import React, { useContext, useEffect } from "react"
 import { Link } from "react-router-dom"
-import { AiOutlineMail } from "react-icons/ai"
-import { RiLockPasswordLine } from "react-icons/ri"
 import { PiVideoBold } from "react-icons/pi"
 import LoginForm from "../components/LoginForm"
+import { AuthContext } from "../contexts/userContext"
+import { useHistory } from "react-router-dom"
+import useRedirectLoggedInUser from "../hooks/useRedirectLoggedInUser"
 
 const LoginPage = () => {
-    const handleForm = (e) => {
-        e.preventDefault()
-    }
+    const { authData } = useContext(AuthContext)
+    const history = useHistory()
+
+    useRedirectLoggedInUser(authData, history)
+
     return (
         <div className="flex justfiy-center items-center min-h-[100vh] text-white">
             <div

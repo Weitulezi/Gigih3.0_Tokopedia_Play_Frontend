@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react"
+import React, { useState } from "react"
 import ProductCatalogue from "../components/products/ProductCatalogue"
+import useResponsiveVideoIframe from "../hooks/useResponsiveVideoIframe"
 
 const VideoDetailsPage = () => {
     const [iframeWidth, setIframeWidth] = useState(window.innerWidth * 0.6)
@@ -7,20 +8,7 @@ const VideoDetailsPage = () => {
         (window.innerWidth * 0.6) / 1.7,
     )
 
-    useEffect(() => {
-        console.log(iframeWidth)
-        const handleResize = () => {
-            const newWidth = window.innerWidth * 0.6
-            const newHeight = newWidth / 1.7
-            setIframeWidth(newWidth)
-            setIframeHeight(newHeight)
-        }
-
-        window.addEventListener("resize", handleResize)
-        return () => {
-            window.removeEventListener("resize", handleResize)
-        }
-    })
+    useResponsiveVideoIframe(iframeWidth, setIframeWidth, setIframeHeight)
 
     return (
         <div className="flex  text-white">
