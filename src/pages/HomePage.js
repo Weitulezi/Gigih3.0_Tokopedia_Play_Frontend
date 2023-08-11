@@ -3,7 +3,7 @@ import VideoCatalogue from "../components/videos/VideoCatalogue"
 
 const HomePage = () => {
     return (
-        <div className="flex items-center p-[14px] text-white">
+        <div className="min-h-[90vh] flex p-[14px] text-white">
             <div
                 className="text-white"
                 style={{

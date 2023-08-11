@@ -1,7 +1,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 
-const VideoCard = ({ videoId, title, videoImage }) => {
+const VideoCard = ({ videoId, title, thumbnail }) => {
     return (
         <Link to={`/videos/${videoId}`}>
             <div
@@ -11,7 +11,7 @@ const VideoCard = ({ videoId, title, videoImage }) => {
                 <div>
                     <img
                         className="w-[500px]  object-cover"
-                        src={`${videoImage}`}
+                        src={`${thumbnail}`}
                         alt=""
                     />
                 </div>

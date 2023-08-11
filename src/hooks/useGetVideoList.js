@@ -3,7 +3,7 @@ import { useEffect } from "react"
 const useGetVideoList = (videosData, setVideosData) => {
     useEffect(() => {
         const getVideos = async () => {
-            if (!videosData) {
+            if (videosData === null) {
                 const res = await fetch(`/api/videos`)
                 const status = await res.status
                 const data = await res.json()

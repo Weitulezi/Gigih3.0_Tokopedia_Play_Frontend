@@ -16,7 +16,7 @@ const VideoCatalogue = () => {
                         key={video._id}
                         videoId={video._id}
                         title={video.title}
-                        videoImage={video.videoImage}
+                        thumbnail={video.thumbnail}
                         embedId={video.embedId}
                     />
                 ))}

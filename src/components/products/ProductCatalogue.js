@@ -1,7 +1,7 @@
 import React from "react"
 import ProductCard from "./ProductCard"
 
-const ProductCatalogue = () => {
+const ProductCatalogue = ({ products }) => {
     return (
         <div className="w-[20%] h-[90vh] overflow-scroll overflow-x-hidden">
             <div
@@ -12,35 +12,15 @@ const ProductCatalogue = () => {
                     rowGap: "14px",
                 }}
             >
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
-                <ProductCard />
+                {products &&
+                    products.map((item) => (
+                        <ProductCard
+                            title={item.title}
+                            image={item.image}
+                            price={item.price}
+                            link={item.link}
+                        />
+                    ))}
             </div>
         </div>
     )

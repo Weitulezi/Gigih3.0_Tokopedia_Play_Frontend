@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { GiPriceTag } from "react-icons/gi"
 import { AiOutlineShoppingCart } from "react-icons/ai"
 
-const ProductCard = () => {
+const ProductCard = ({ title, image, link, price }) => {
     return (
         <div
             className="border-[2px] border-black-40"
@@ -18,29 +18,29 @@ const ProductCard = () => {
                     width="100%"
                     height="auto"
                     className="object-cover"
-                    src="/assets/yt-thumbnail.jpg"
+                    src={`${image}`}
                     // src="/assets/bracket-tv.png"
                     alt="Product's Image example"
                 />
             </div>
             <div className="mx-[14px]">
-                <h3 className="text-[18px]">Lorem ipsum dolor sit.</h3>
+                <h3 className="text-[18px]">{title}</h3>
             </div>
             <div className="flex justify-between items-center  mx-[14px] mb-[14px]">
                 <div className="flex items-center gap-x-[8px]">
                     <span>
                         <GiPriceTag />
                     </span>
-                    <span>Rp. 300000</span>
+                    <span>Rp. {price}</span>
                 </div>
-                <Link to="/">
+                <a href={`${link}`} target="_blank">
                     <div className="flex items-center gap-x-[4px]">
-                        <span>Add to</span>
+                        <span>Buy</span>
                         <span className="text-[22px]">
                             <AiOutlineShoppingCart />
                         </span>
                     </div>
-                </Link>
+                </a>
             </div>
         </div>
     )
