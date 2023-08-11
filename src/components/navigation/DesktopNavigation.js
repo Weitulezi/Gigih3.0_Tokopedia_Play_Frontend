@@ -21,7 +21,9 @@ const DesktopNavigation = () => {
                         src="/assets/tokopedia_logo.png"
                         alt="Tokopedia Logo"
                     />
-                    <h1 className="font-bold text-xl">Tokopedia Play</h1>
+                    <h1 className="font-bold font-space-grotesk text-xl">
+                        Tokopedia Play
+                    </h1>
                 </div>
             </Link>
             {!authData ? (

@@ -1,5 +1,4 @@
 import React from "react"
-import { Link } from "react-router-dom"
 import { GiPriceTag } from "react-icons/gi"
 import { AiOutlineShoppingCart } from "react-icons/ai"
 

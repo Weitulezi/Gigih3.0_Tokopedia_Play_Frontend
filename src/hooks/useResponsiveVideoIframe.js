@@ -6,7 +6,6 @@ const useResponsiveVideoIframe = (
     setIframeHeight,
 ) => {
     useEffect(() => {
-        console.log(iframeWidth)
         const handleResize = () => {
             const newWidth = window.innerWidth * 0.6
             const newHeight = newWidth / 1.7

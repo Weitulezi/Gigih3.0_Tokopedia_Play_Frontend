@@ -1,23 +1,36 @@
-import React, { useState } from "react"
+import React, { useEffect, useRef } from "react"
 import useGetVideoCommentList from "../../hooks/useGetVideoCommentList"
+import useScrollToBottom from "../../hooks/useScrollToBottom"
 import CommentBox from "./CommentBox"
 
-const CommentList = ({ videoId }) => {
-    const [comments, setComments] = useState(null)
+const CommentList = ({ videoId, comments, setComments }) => {
+    const commentListRef = useRef()
 
     useGetVideoCommentList(videoId, setComments)
 
+    // Scroll to bottom when comment is added
+    useScrollToBottom(commentListRef, comments)
+
     return (
         <div
-            className="h-[80%] box-border overflow-scroll overflow-x-hidden"
-            style={{ display: "flex", flexDirection: "column", rowGap: "18px" }}
+            ref={commentListRef}
+            className=" box-border mb-[10px]  overflow-scroll overflow-x-hidden"
+            style={{
+                width: "100%",
+                height: "calc(80% - 11px)",
+                display: "flex",
+                flexDirection: "column",
+            }}
         >
             {comments &&
-                comments.map((item) => (
+                comments.map((item, index) => (
                     <CommentBox
                         key={item._id}
                         email={item.user.email}
                         content={item.content}
+                        isLastChild={
+                            comments.length === index + 1 ? true : false
+                        }
                     />
                 ))}
         </div>

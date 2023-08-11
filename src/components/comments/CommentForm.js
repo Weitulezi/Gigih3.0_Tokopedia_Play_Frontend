@@ -1,11 +1,28 @@
-import React, { useState } from "react"
+import React, { useContext, useRef, useState } from "react"
+import { AuthContext } from "../../contexts/userContext"
+import useCreateComment from "../../hooks/useCreateComment"
 
-const CommentForm = () => {
+const CommentForm = ({ videoId, setComments }) => {
+    const { authData } = useContext(AuthContext)
+
+    const textAreaRef = useRef(null)
     const [content, setContent] = useState("")
+    const [createComment, setCreateComment] = useState(false)
+
+    useCreateComment(
+        createComment,
+        setCreateComment,
+        authData,
+        videoId,
+        setComments,
+        content,
+        setContent,
+    )
 
     const handleForm = (e) => {
         e.preventDefault()
-        setContent("")
+        setCreateComment(true)
+        textAreaRef.current.focus()
     }
 
     return (
@@ -16,12 +33,13 @@ const CommentForm = () => {
                 className="w-full h-full"
             >
                 <textarea
-                    className="w-full h-[70%] bg-black resize-none border-2 border-black-40 rounded-md py-[10px] px-[15px] overflow-hidden"
+                    ref={textAreaRef}
+                    className="w-full outline-none h-[70%] bg-black resize-none border-2 border-black-40 rounded-md py-[10px] px-[15px] overflow-hidden placeholder:text-black-40 text-black-140"
                     name="content"
                     value={content}
                     onChange={(e) => setContent(e.target.value)}
                     spellCheck="false"
-                    id=""
+                    placeholder="Add comment..."
                 ></textarea>
                 <button className="w-full h-[30%] bg-[#00CC33] text-[1rem] text-black font-bold rounded-md">
                     Post a comment

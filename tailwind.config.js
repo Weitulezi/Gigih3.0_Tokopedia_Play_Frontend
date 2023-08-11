@@ -9,6 +9,9 @@ module.exports = {
                 "black-40": "rgb(40, 40, 40)",
                 "black-140": "rgb(140, 140, 140)",
             },
+            fontFamily: {
+                "space-grotesk": "Space Grotesk, sans-serif;",
+            },
         },
     },
     plugins: [],

@@ -32,9 +32,7 @@ const createUser = async (
 
 const loginUser = async (
     email,
-    setEmail,
     password,
-    setPassword,
     setMessage,
     setSuccess,
     setAuthData,

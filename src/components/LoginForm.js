@@ -16,15 +16,7 @@ const LoginForm = () => {
 
     const handleForm = (e) => {
         e.preventDefault()
-        loginUser(
-            email,
-            setEmail,
-            password,
-            setPassword,
-            setMessage,
-            setSuccess,
-            setAuthData,
-        )
+        loginUser(email, password, setMessage, setSuccess, setAuthData)
     }
 
     const renderMessage = () => {
