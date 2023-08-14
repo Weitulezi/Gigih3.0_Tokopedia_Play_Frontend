@@ -5,7 +5,9 @@ const useGetVideoDetail = (videoId, setVideo, setLoading) => {
         if (videoId) {
             setLoading(true)
             const getVideo = async () => {
-                const res = await fetch(`/api/videos/${videoId}`)
+                const res = await fetch(
+                    `https://tokplay-production-37be.up.railway.app//api/videos/${videoId}`,
+                )
 
                 const status = await res.status
                 const data = await res.json()
