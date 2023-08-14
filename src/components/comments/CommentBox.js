@@ -1,4 +1,5 @@
 import React from "react"
+import { BiUserCircle } from "react-icons/bi"
 
 const CommentBox = ({ email, content, isLastChild }) => {
     return (
@@ -11,8 +12,13 @@ const CommentBox = ({ email, content, isLastChild }) => {
                 borderBottom: isLastChild ? "1px solid rgb(40, 40, 40)" : "",
             }}
         >
-            <h3 className="text-[14px] text-[#00CC33] w-max">{email}</h3>
-            <div className="flex break-words text-[14px] text-black-150">
+            <div className="flex items-center gap-x-1 text-black-100">
+                <span className="text-[18px]">
+                    <BiUserCircle />
+                </span>
+                <h3 className="text-[14px]  w-max">{email}</h3>
+            </div>
+            <div className="flex break-words text-[14px] text-black-200">
                 {content}
             </div>
         </div>

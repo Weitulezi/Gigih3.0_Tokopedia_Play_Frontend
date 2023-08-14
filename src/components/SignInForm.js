@@ -1,11 +1,11 @@
 import React, { useState } from "react"
-
 import { createUser } from "../utils/auth"
-
 import { AiOutlineMail } from "react-icons/ai"
-import { RiLockPasswordLine } from "react-icons/ri"
+import { FaSignature } from "react-icons/fa"
+import { BsFillKeyFill } from "react-icons/bs"
 
 const SignInForm = () => {
+    const [username, setUsername] = useState("")
     const [email, setEmail] = useState("")
     const [password, setPassword] = useState("")
     const [success, setSuccess] = useState(false)
@@ -14,6 +14,8 @@ const SignInForm = () => {
     const handleForm = (e) => {
         e.preventDefault()
         createUser(
+            username,
+            setUsername,
             email,
             setEmail,
             password,
@@ -43,6 +45,26 @@ const SignInForm = () => {
             }}
         >
             <div>{renderMessage()}</div>
+            <label htmlFor="username">Username</label>
+            <div
+                className="bg-black border-[2px] border-black-40 rounded-[6px]"
+                style={{ display: "flex", columnGap: "10px" }}
+            >
+                <span className="text-black-140 text-[22px] p-[10px] border-r-2 border-black-40">
+                    <FaSignature />
+                </span>
+                <input
+                    autoFocus
+                    type="text"
+                    name="username"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
+                    autoComplete="off"
+                    required
+                    spellCheck="false"
+                    className="w-full bg-black border-[none] outline-none px-[5px]"
+                />
+            </div>
             <label htmlFor="email">Email</label>
             <div
                 className="bg-black border-[2px] border-black-40 rounded-[6px]"
@@ -68,7 +90,7 @@ const SignInForm = () => {
                 style={{ display: "flex", columnGap: "10px" }}
             >
                 <span className="text-[22px] p-[10px] border-r-2 border-black-40">
-                    <RiLockPasswordLine />
+                    <BsFillKeyFill />
                 </span>
                 <input
                     type="password"

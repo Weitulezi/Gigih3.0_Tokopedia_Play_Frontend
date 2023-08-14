@@ -11,6 +11,7 @@ const useCreateComment = (
 ) => {
     useEffect(() => {
         if (createComment && authData && content !== "") {
+            setContent("")
             const createComment = async () => {
                 const res = await fetch(`/api/comments`, {
                     method: "POST",
@@ -25,7 +26,6 @@ const useCreateComment = (
                 if (status === 201 && data) {
                     setComments((comments) => [...comments, data])
                     setCreateComment(false)
-                    setContent("")
                 }
             }
             createComment()

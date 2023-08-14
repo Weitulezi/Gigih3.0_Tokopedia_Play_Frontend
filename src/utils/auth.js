@@ -1,4 +1,6 @@
 const createUser = async (
+    username,
+    setUsername,
     email,
     setEmail,
     password,
@@ -11,12 +13,13 @@ const createUser = async (
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ username, email, password }),
     })
     const status = await res.status
     const data = await res.json()
 
     if (status === 201) {
+        setUsername("")
         setEmail("")
         setPassword("")
         setMessage(data.message)
@@ -31,7 +34,7 @@ const createUser = async (
 }
 
 const loginUser = async (
-    email,
+    username,
     password,
     setMessage,
     setSuccess,
@@ -42,7 +45,7 @@ const loginUser = async (
         headers: {
             "Content-Type": "application/json",
         },
-        body: JSON.stringify({ email, password }),
+        body: JSON.stringify({ username, password }),
     })
     const status = await res.status
     const data = await res.json()

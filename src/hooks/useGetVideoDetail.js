@@ -1,8 +1,9 @@
 import { useEffect } from "react"
 
-const useGetVideoDetail = (videoId, setVideo) => {
+const useGetVideoDetail = (videoId, setVideo, setLoading) => {
     useEffect(() => {
         if (videoId) {
+            setLoading(true)
             const getVideo = async () => {
                 const res = await fetch(`/api/videos/${videoId}`)
 
@@ -12,12 +13,13 @@ const useGetVideoDetail = (videoId, setVideo) => {
                 if (status === 200) {
                     if (data) {
                         setVideo(data)
+                        setLoading(false)
                     }
                 }
             }
             getVideo()
         }
-    }, [videoId, setVideo])
+    }, [videoId, setVideo, setLoading])
 }
 
 export default useGetVideoDetail

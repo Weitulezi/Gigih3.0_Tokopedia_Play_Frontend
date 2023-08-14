@@ -17,7 +17,7 @@ const CommentList = ({ videoId, comments, setComments }) => {
             className=" box-border mb-[10px]  overflow-scroll overflow-x-hidden"
             style={{
                 width: "100%",
-                height: "calc(80% - 11px)",
+                height: "calc(78% - 11px)",
                 display: "flex",
                 flexDirection: "column",
             }}

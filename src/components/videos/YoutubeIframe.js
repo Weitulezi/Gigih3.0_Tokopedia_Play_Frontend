@@ -3,9 +3,6 @@ import React from "react"
 const YoutubeIframe = ({ embedId, iframeWidth, iframeHeight }) => {
     return (
         <div className="flex-column items-center justify-center">
-            {/* <h1 className="text-[35px] text-center mt-[10px] font-bold font-space-grotesk">
-                {title}
-            </h1> */}
             <iframe
                 className="py-[15px]"
                 width={iframeWidth}

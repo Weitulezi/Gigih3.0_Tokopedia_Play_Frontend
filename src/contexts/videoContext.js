@@ -2,4 +2,6 @@ import { createContext } from "react"
 
 const VideoContext = createContext(null)
 
-export { VideoContext }
+const UserVideosContext = createContext(null)
+
+export { VideoContext, UserVideosContext }

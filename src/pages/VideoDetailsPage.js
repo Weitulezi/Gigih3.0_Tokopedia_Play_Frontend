@@ -6,20 +6,20 @@ import useGetVideoDetail from "../hooks/useGetVideoDetail"
 import useGetVideoProductList from "../hooks/useGetVideoProductList"
 import CommentSection from "../components/comments/CommentSection"
 import YoutubeIframe from "../components/videos/YoutubeIframe"
+import YoutubeIframSkeleton from "../components/videos/Skeleton"
 
 const VideoDetailsPage = () => {
     const { videoId } = useParams()
 
     const [video, setVideo] = useState(null)
-    const [products, setProducts] = useState(null)
-    const [iframeWidth, setIframeWidth] = useState(window.innerWidth * 0.6)
+    const [iframeWidth, setIframeWidth] = useState(window.innerWidth * 0.65)
     const [iframeHeight, setIframeHeight] = useState(
-        (window.innerWidth * 0.6) / 1.7,
+        (window.innerWidth * 0.65) / 1.7,
     )
+    const [loading, setLoading] = useState(false)
 
     useResponsiveVideoIframe(iframeWidth, setIframeWidth, setIframeHeight)
-    useGetVideoDetail(videoId, setVideo)
-    useGetVideoProductList(videoId, setProducts)
+    useGetVideoDetail(videoId, setVideo, setLoading)
 
     return (
         <div className="flex text-white">
@@ -27,10 +27,16 @@ const VideoDetailsPage = () => {
                 className="w-full flex justify-between"
                 style={{ gap: "15px" }}
             >
-                <ProductCatalogue products={products} />
+                <ProductCatalogue videoId={videoId} />
                 {video && (
                     <YoutubeIframe
                         embedId={video.embedId}
+                        iframeWidth={iframeWidth}
+                        iframeHeight={iframeHeight}
+                    />
+                )}
+                {loading && (
+                    <YoutubeIframSkeleton
                         iframeWidth={iframeWidth}
                         iframeHeight={iframeHeight}
                     />

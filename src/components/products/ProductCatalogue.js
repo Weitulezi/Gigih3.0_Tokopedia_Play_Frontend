@@ -1,13 +1,19 @@
-import React from "react"
+import React, { useState } from "react"
 import ProductCard from "./ProductCard"
+import useGetVideoProductList from "../../hooks/useGetVideoProductList"
+import ProductListSkeleton from "./Skeleton"
 
-const ProductCatalogue = ({ products }) => {
+const ProductCatalogue = ({ videoId }) => {
+    const [products, setProducts] = useState(null)
+    const [loading, setLoading] = useState(false)
+    useGetVideoProductList(videoId, setProducts, setLoading)
+
     return (
-        <div className="w-[20%] h-[90vh] overflow-scroll overflow-x-hidden">
+        <div className="w-[15%] h-[90vh] overflow-scroll overflow-x-hidden">
             <div
                 className="mx-[15px] my-[15px]"
                 style={{
-                    display: "flex",
+                    displasy: "flex",
                     flexDirection: "column",
                     rowGap: "14px",
                 }}
@@ -22,6 +28,15 @@ const ProductCatalogue = ({ products }) => {
                             link={item.link}
                         />
                     ))}
+                <div
+                    style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                        rowGap: "10px",
+                    }}
+                ></div>
+                {loading && <ProductListSkeleton />}
             </div>
         </div>
     )

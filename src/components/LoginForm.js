@@ -1,7 +1,7 @@
 import React, { useContext, useState } from "react"
 
-import { AiOutlineMail } from "react-icons/ai"
-import { RiLockPasswordLine } from "react-icons/ri"
+import { BsFillKeyFill } from "react-icons/bs"
+import { FaSignature } from "react-icons/fa"
 import { AuthContext } from "../contexts/userContext"
 
 import { loginUser } from "../utils/auth"
@@ -9,14 +9,14 @@ import { loginUser } from "../utils/auth"
 const LoginForm = () => {
     const { setAuthData } = useContext(AuthContext)
 
-    const [email, setEmail] = useState("")
+    const [username, setUsername] = useState("")
     const [password, setPassword] = useState("")
     const [success, setSuccess] = useState(false)
     const [message, setMessage] = useState("")
 
     const handleForm = (e) => {
         e.preventDefault()
-        loginUser(email, password, setMessage, setSuccess, setAuthData)
+        loginUser(username, password, setMessage, setSuccess, setAuthData)
     }
 
     const renderMessage = () => {
@@ -39,19 +39,20 @@ const LoginForm = () => {
             }}
         >
             <div>{renderMessage()}</div>
-            <label htmlFor="email">Email</label>
+            <label htmlFor="username">Username</label>
             <div
                 className="bg-black border-[2px] border-black-40 rounded-[6px]"
                 style={{ display: "flex", columnGap: "10px" }}
             >
                 <span className="text-black-140 text-[22px] p-[10px] border-r-2 border-black-40">
-                    <AiOutlineMail />
+                    <FaSignature />
                 </span>
                 <input
-                    type="email"
-                    name="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    autoFocus
+                    type="text"
+                    name="username"
+                    value={username}
+                    onChange={(e) => setUsername(e.target.value)}
                     autoComplete="off"
                     required
                     spellCheck="false"
@@ -64,7 +65,7 @@ const LoginForm = () => {
                 style={{ display: "flex", columnGap: "10px" }}
             >
                 <span className="text-[22px] p-[10px] border-r-2 border-black-40">
-                    <RiLockPasswordLine />
+                    <BsFillKeyFill />
                 </span>
                 <input
                     type="password"

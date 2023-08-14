@@ -12,11 +12,6 @@ const HomePage = () => {
                     gap: "20px",
                 }}
             >
-                <div className="flex items-center gap-x-[12px]">
-                    <h1>Elektronik</h1>
-                    <h1>Clothes</h1>
-                    <h1>F&B</h1>
-                </div>
                 <VideoCatalogue />
             </div>
         </div>
