@@ -1,3 +1,5 @@
+import { serverDomain, serVerDomain } from "../constants/path"
+
 const createUser = async (
     username,
     setUsername,
@@ -8,7 +10,7 @@ const createUser = async (
     setMessage,
     setSuccess,
 ) => {
-    const res = await fetch(`/api/users`, {
+    const res = await fetch(`${serverDomain}/api/users`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",
@@ -40,7 +42,7 @@ const loginUser = async (
     setSuccess,
     setAuthData,
 ) => {
-    const res = await fetch(`/api/users/login`, {
+    const res = await fetch(`${serverDomain}/api/users/login`, {
         method: "POST",
         headers: {
             "Content-Type": "application/json",

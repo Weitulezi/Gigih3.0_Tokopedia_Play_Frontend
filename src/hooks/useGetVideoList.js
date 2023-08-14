@@ -1,12 +1,11 @@
 import { useEffect } from "react"
+import { serVerDomain } from "../constants/path"
 
 const useGetVideoList = (videosData, setVideosData) => {
     useEffect(() => {
         const getVideos = async () => {
             if (videosData === null) {
-                const res = await fetch(
-                    `https://tokplay-production-37be.up.railway.app/api/videos`,
-                )
+                const res = await fetch(`${serVerDomain}/api/videos`)
                 const status = await res.status
                 const data = await res.json()
                 if (data) {
