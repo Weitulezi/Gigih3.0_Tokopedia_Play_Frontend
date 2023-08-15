@@ -22,7 +22,7 @@ const UserVideoTable = () => {
                                 <th className="py-[10px] text-left px-[10px] border-r-2 border-black-40">
                                     Title
                                 </th>
-                                <th className="py-[10px] text-center px-[10px] border-r-2 border-black-40">
+                                <th className="lg:block md:block hidden py-[10px] text-center px-[10px] border-r-2 border-black-40">
                                     Embed Id
                                 </th>
                                 <th className="py-[10px] text-center px-[10px] ">

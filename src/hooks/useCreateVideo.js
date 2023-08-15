@@ -1,4 +1,5 @@
 import { useEffect, useContext } from "react"
+import { serverDomain } from "../constants/path"
 import { AuthContext } from "../contexts/userContext"
 import { UserVideosContext } from "../contexts/videoContext"
 import { VideoContext } from "../contexts/videoContext"
@@ -24,7 +25,7 @@ const useCreateVideo = (
     useEffect(() => {
         if (authData && isSubmitted) {
             const createVideo = async () => {
-                const res = await fetch(`/api/videos`, {
+                const res = await fetch(`${serverDomain}/api/videos`, {
                     method: "POST",
                     headers: {
                         Authorization: `Bearer ${authData.token}`,

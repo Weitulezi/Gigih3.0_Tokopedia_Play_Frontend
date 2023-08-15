@@ -1,4 +1,5 @@
 import { useEffect, useState, useContext } from "react"
+import { serverDomain } from "../constants/path"
 import { AuthContext } from "../contexts/userContext"
 import { VideoContext } from "../contexts/videoContext"
 
@@ -24,21 +25,24 @@ const useUpdateVideo = (
     useEffect(() => {
         if (authData && isSubmitted) {
             const reqUpdateData = async () => {
-                const res = await fetch(`/api/videos/${videoId}`, {
-                    method: "PUT",
-                    headers: {
-                        Authorization: `Bearer ${authData.token}`,
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify({
-                        title,
-                        thumbnail: thumbnail,
-                        embedId,
-                        category: {
-                            name: category,
+                const res = await fetch(
+                    `${serverDomain}/api/videos/${videoId}`,
+                    {
+                        method: "PUT",
+                        headers: {
+                            Authorization: `Bearer ${authData.token}`,
+                            "Content-Type": "application/json",
                         },
-                    }),
-                })
+                        body: JSON.stringify({
+                            title,
+                            thumbnail: thumbnail,
+                            embedId,
+                            category: {
+                                name: category,
+                            },
+                        }),
+                    },
+                )
                 const status = await res.status
                 const data = await res.json()
                 if (status === 200) {

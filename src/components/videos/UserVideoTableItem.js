@@ -24,7 +24,7 @@ const UserVideoTableItem = ({
             <td className="w-[60%] py-[10px] text-left px-[10px] border-r-2 border-black-40">
                 {title}
             </td>
-            <td className="py-[10px] text-center px-[10px] border-r-2 border-black-40">
+            <td className="lg:block md:block hidden py-[10px] text-center px-[10px] border-r-2 border-black-40">
                 {embedId}
             </td>
             <td className="flex items-center justify-center gap-x-[14px] p-[6px]">

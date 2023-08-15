@@ -29,7 +29,7 @@ const UserProductTableItem = ({
             <td className="py-[10px] px-[10px] text-center border-r-2 border-black-40">
                 Rp. {price}
             </td>
-            <td className="py-[10px] px-[10px] text-center border-r-2 border-black-40">
+            <td className="lg:block md:block hidden py-[10px] px-[10px] text-center border-r-2 border-black-40">
                 <a href={`${link}`} target="_blank">
                     Visit
                 </a>

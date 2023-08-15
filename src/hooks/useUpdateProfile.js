@@ -1,4 +1,5 @@
 import React, { useEffect } from "react"
+import { serverDomain } from "../constants/path"
 
 const useUpdateProfile = (
     authData,
@@ -16,7 +17,7 @@ const useUpdateProfile = (
         if (authData && isSubmitted) {
             const updateProfile = async () => {
                 console.log("Run")
-                const res = await fetch(`/api/users`, {
+                const res = await fetch(`${serverDomain}/api/users`, {
                     method: "PUT",
                     headers: {
                         Authorization: `Bearer ${authData.token}`,

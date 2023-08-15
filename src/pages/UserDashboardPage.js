@@ -14,7 +14,7 @@ const UserDashboardPage = () => {
         <UserVideosContext.Provider value={{ userVideos, setUserVideos }}>
             <div className="flex w-full text-white justify-center">
                 <div
-                    className="lg:w-[70%] md:w-[70%] w-[90%] h my-[30px] lg:flex md:flex flex-col"
+                    className="lg:w-[70%] md:w-[70%] w-[90%] h my-[30px] lg:flex-row md:flex-row flex-col"
                     style={{
                         display: "flex",
                         columnGap: "15px",
@@ -22,7 +22,7 @@ const UserDashboardPage = () => {
                 >
                     <section
                         style={{ boxShadow: "4px 10px 27px 2px rgba(0,0,0,1)" }}
-                        className="w-[24%] h-max flex-column border-[2px] border-black-40 rounded-md overflow-hidden"
+                        className="lg:w-[24%] md:w-[24%] w-[90%] h-max items-center  lg:flex-col md:flex-col flex border-[2px]  border-black-40 rounded-md overflow-hidden lg:m-0 md:m-0 mb-[25px] lg:mx-0 md:mx-0 mx-auto"
                     >
                         <div className="flex">
                             <img

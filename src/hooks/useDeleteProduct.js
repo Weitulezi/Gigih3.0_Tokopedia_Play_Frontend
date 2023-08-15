@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react"
+import { serverDomain } from "../constants/path"
 import { AuthContext } from "../contexts/userContext"
 
 const useDeleteProduct = (productId, setUserProducts) => {
@@ -8,12 +9,15 @@ const useDeleteProduct = (productId, setUserProducts) => {
     useEffect(() => {
         if (deleteProduct && authData) {
             const reqDeleteVideo = async () => {
-                const res = await fetch(`/api/products/${productId}`, {
-                    method: "DELETE",
-                    headers: {
-                        Authorization: `Bearer ${authData.token}`,
+                const res = await fetch(
+                    `${serverDomain}/api/products/${productId}`,
+                    {
+                        method: "DELETE",
+                        headers: {
+                            Authorization: `Bearer ${authData.token}`,
+                        },
                     },
-                })
+                )
                 const status = await res.status
                 if (status === 200) {
                     setUserProducts(null)

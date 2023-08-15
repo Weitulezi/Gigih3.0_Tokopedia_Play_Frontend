@@ -1,4 +1,5 @@
 import React, { useContext, useEffect, useState } from "react"
+import { serverDomain } from "../constants/path"
 import { AuthContext } from "../contexts/userContext"
 
 const useCreateProduct = (
@@ -22,7 +23,7 @@ const useCreateProduct = (
     useEffect(() => {
         if (authData && isSubmited) {
             const reqCreateProduct = async () => {
-                const res = await fetch(`/api/products`, {
+                const res = await fetch(`${serverDomain}/api/products`, {
                     method: "POST",
                     headers: {
                         Authorization: `Bearer ${authData.token}`,

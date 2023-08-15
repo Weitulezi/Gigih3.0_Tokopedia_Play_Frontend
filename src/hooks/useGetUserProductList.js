@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react"
+import { serverDomain } from "../constants/path"
 import { AuthContext } from "../contexts/userContext"
 
 const useGetUserProductList = (userProducts, setUserProducts) => {
@@ -9,7 +10,7 @@ const useGetUserProductList = (userProducts, setUserProducts) => {
         if (authData && userProducts === null) {
             setLoading(true)
             const getUserProducts = async () => {
-                const res = await fetch(`/api/users/products`, {
+                const res = await fetch(`${serverDomain}/api/users/products`, {
                     method: "GET",
                     headers: {
                         Authorization: `Bearer ${authData.token}`,

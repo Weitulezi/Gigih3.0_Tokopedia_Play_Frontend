@@ -1,4 +1,5 @@
 import { useEffect } from "react"
+import { serverDomain } from "../constants/path"
 
 const useCreateComment = (
     createComment,
@@ -13,7 +14,7 @@ const useCreateComment = (
         if (createComment && authData && content !== "") {
             setContent("")
             const createComment = async () => {
-                const res = await fetch(`/api/comments`, {
+                const res = await fetch(`${serverDomain}/api/comments`, {
                     method: "POST",
                     headers: {
                         Authorization: `Bearer ${authData.token}`,

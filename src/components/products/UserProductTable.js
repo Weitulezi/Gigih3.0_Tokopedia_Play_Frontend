@@ -27,7 +27,7 @@ const UserProductTable = () => {
                                 <th className="w-[25%] py-[10px] text-center px-[10px] border-r-2 border-black-40">
                                     Price
                                 </th>
-                                <th className=" py-[10px] text-center px-[10px] border-r-2 border-black-40">
+                                <th className="lg:block md:block hidden py-[10px] text-center px-[10px] border-r-2 border-black-40">
                                     Link
                                 </th>
                                 <th className="w-[11%] py-[10px] text-center px-[10px] ">

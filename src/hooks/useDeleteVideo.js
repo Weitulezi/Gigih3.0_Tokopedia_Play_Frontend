@@ -1,4 +1,5 @@
 import { useContext, useEffect, useState } from "react"
+import { serverDomain } from "../constants/path"
 import { AuthContext } from "../contexts/userContext"
 import { UserVideosContext, VideoContext } from "../contexts/videoContext"
 
@@ -12,12 +13,15 @@ const useDeleteVideo = (videoId) => {
     useEffect(() => {
         if (deleteVideo && authData) {
             const reqDeleteData = async () => {
-                const res = await fetch(`/api/videos/${videoId}`, {
-                    method: "DELETE",
-                    headers: {
-                        Authorization: `Bearer ${authData.token}`,
+                const res = await fetch(
+                    `${serverDomain}/api/videos/${videoId}`,
+                    {
+                        method: "DELETE",
+                        headers: {
+                            Authorization: `Bearer ${authData.token}`,
+                        },
                     },
-                })
+                )
                 const status = await res.status
                 const data = await res.json()
                 if (status === 200) {

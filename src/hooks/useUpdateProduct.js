@@ -1,4 +1,5 @@
 import { useEffect, useState, useContext } from "react"
+import { serverDomain } from "../constants/path"
 import { AuthContext } from "../contexts/userContext"
 import { VideoContext } from "../contexts/videoContext"
 
@@ -20,7 +21,7 @@ const useUpdateProduct = (
     useEffect(() => {
         if (authData && isSubmitted) {
             const reqUpdateProduct = async () => {
-                const res = await fetch(`/api/products`, {
+                const res = await fetch(`${serverDomain}/api/products`, {
                     method: "PUT",
                     headers: {
                         Authorization: `Bearer ${authData.token}`,
