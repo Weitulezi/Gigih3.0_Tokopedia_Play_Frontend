@@ -1,6 +1,7 @@
 import { useEffect, useState, useContext } from "react"
 import { UserVideosContext } from "../contexts/videoContext"
 import { AuthContext } from "../contexts/userContext"
+import { serverDomain } from "../constants/path"
 
 const useGetUserVideoList = () => {
     const { authData } = useContext(AuthContext)
@@ -11,7 +12,7 @@ const useGetUserVideoList = () => {
         if (authData && userVideos === null) {
             setLoading(true)
             const getUserVideos = async () => {
-                const res = await fetch(`/api/users/videos`, {
+                const res = await fetch(`${serverDomain}/api/users/videos`, {
                     method: "GET",
                     headers: {
                         Authorization: `Bearer ${authData.token}`,

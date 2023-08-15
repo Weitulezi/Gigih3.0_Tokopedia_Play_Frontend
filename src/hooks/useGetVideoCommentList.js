@@ -1,11 +1,14 @@
 import { useEffect } from "react"
+import { serverDomain } from "../constants/path"
 
 const useGetVideoCommentList = (videoId, setComments) => {
     useEffect(() => {
         if (videoId) {
             console.log("Get comments")
             const getComments = async () => {
-                const res = await fetch(`/api/comments?video=${videoId}`)
+                const res = await fetch(
+                    `${serverDomain}/api/comments?video=${videoId}`,
+                )
                 const status = await res.status
                 const data = await res.json()
                 if (status === 200) {

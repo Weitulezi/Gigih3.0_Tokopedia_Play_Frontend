@@ -24,7 +24,7 @@ const VideoDetailsPage = () => {
     return (
         <div className="flex text-white">
             <div
-                className="w-full flex justify-between"
+                className="w-full lg:flex md:flex flex-column justify-between"
                 style={{ gap: "15px" }}
             >
                 <ProductCatalogue videoId={videoId} />

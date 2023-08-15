@@ -14,7 +14,7 @@ const UserDashboardPage = () => {
         <UserVideosContext.Provider value={{ userVideos, setUserVideos }}>
             <div className="flex w-full text-white justify-center">
                 <div
-                    className="w-[70%] h my-[30px]"
+                    className="lg:w-[70%] md:w-[70%] w-[90%] h my-[30px] lg:flex md:flex flex-col"
                     style={{
                         display: "flex",
                         columnGap: "15px",
@@ -48,7 +48,7 @@ const UserDashboardPage = () => {
                             </div>
                         </Link>
                     </section>
-                    <section className="w-[76%] h-max flex ">
+                    <section className="lg:w-[76%] md:w-[76%] w-[100%] h-max flex ">
                         {location.pathname === "/dashboard/profile" && (
                             <ProfileForm />
                         )}

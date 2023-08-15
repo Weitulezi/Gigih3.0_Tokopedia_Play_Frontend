@@ -8,7 +8,7 @@ const CommentSection = ({ videoId }) => {
 
     return (
         <div
-            className="w-[20%] h-[90vh] box-border p-[15px] pt-[0px] border-2 border-black-40"
+            className="lg:flex md:flex flex lg:w-[25%] md:w-[25%] w-[90%] m-auto h-[90vh] box-border p-[15px] pt-[0px] border-2 border-black-40"
             style={{
                 diplay: "flex",
                 alignItems: "center",

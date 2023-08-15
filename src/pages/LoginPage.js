@@ -15,7 +15,7 @@ const LoginPage = () => {
     return (
         <div className="flex justfiy-center items-center min-h-[100vh] text-white">
             <div
-                className="lg:w-[30%] md:w-[70%] w-[80%] m-[auto] border-[2px] border-black-40 p-8 rounded-lg"
+                className="lg:w-[30%] md:w-[70%] w-[90%] m-[auto] border-[2px] border-black-40 p-8 rounded-lg"
                 style={{
                     display: "flex",
                     flexDirection: "column",
@@ -29,17 +29,17 @@ const LoginPage = () => {
                 <div>
                     <Link to="/">
                         <div className="flex items-center gap-x-2">
-                            <span className="text-3xl">
+                            <span className="lg:text-3xl md:text-3xl text-2xl">
                                 <PiVideoBold />
                             </span>
-                            <h1 className="text-2xl m-0 text-center">
+                            <h1 className="lg:text-2xl md:text-2xl text-lg m-0 text-center">
                                 Tokopedia Play
                             </h1>
                         </div>
                     </Link>
                 </div>
                 <LoginForm />
-                <h5 className="w-full text-sm font-thin text-center">
+                <h5 className="w-full lg:text-sm md:text-sm text-[12px] font-thin text-center">
                     Donn't have an account yet? Sign in{" "}
                     <Link to="/signin">
                         <span className="text-[#00CC33]">here</span>
@@ -47,15 +47,15 @@ const LoginPage = () => {
                 </h5>
                 <div className="flex items-center gap-x-[20px]">
                     <div>
-                        <h1 className="text-xl font-medium text-center">
+                        <h1 className="lg:text-xl md:text-xl text-[16px] font-medium text-center">
                             Powered by :
                         </h1>
                     </div>
-                    <div className="">
+                    <div className="lg:w-[150px] md:w-[150px] w-[100px]">
                         <img
-                            width="150px"
+                            width="100%"
                             src="/assets/gotoimpact-logo.svg"
-                            alt=""
+                            alt="Goto Impact Foundation Logo"
                         />
                     </div>
                 </div>

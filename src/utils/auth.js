@@ -1,4 +1,4 @@
-import { serverDomain, serVerDomain } from "../constants/path"
+import { serverDomain } from "../constants/path"
 
 const createUser = async (
     username,

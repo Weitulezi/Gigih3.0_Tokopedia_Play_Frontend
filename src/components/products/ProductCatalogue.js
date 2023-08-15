@@ -9,7 +9,7 @@ const ProductCatalogue = ({ videoId }) => {
     useGetVideoProductList(videoId, setProducts, setLoading)
 
     return (
-        <div className="w-[15%] h-[90vh] overflow-scroll overflow-x-hidden">
+        <div className="lg:block md:block hidden w-[25%] h-[90vh] overflow-scroll overflow-x-hidden">
             <div
                 className="mx-[15px] my-[15px]"
                 style={{

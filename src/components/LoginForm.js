@@ -56,7 +56,7 @@ const LoginForm = () => {
                     autoComplete="off"
                     required
                     spellCheck="false"
-                    className="w-full bg-black border-[none] outline-none px-[5px]"
+                    className="w-full bg-black border-[none] outline-none lg:px-[5px] md:px-[5px] px-[5px]"
                 />
             </div>
             <label htmlFor="password">Password</label>
@@ -72,7 +72,7 @@ const LoginForm = () => {
                     name="password"
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
-                    className="w-full bg-black border-[none] outline-none px-[5px]"
+                    className="w-full bg-black border-[none] outline-none lg:px-[5px] md:px-[5px] px-[5px]"
                 />
             </div>
             <button className="flex justify-center w-full text-black font-bold bg-[#00CC33] mt-[15px] p-[6px] rounded-[6px]">
