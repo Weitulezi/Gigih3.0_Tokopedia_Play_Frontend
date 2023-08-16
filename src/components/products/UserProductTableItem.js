@@ -29,14 +29,12 @@ const UserProductTableItem = ({
             <td className="py-[10px] px-[10px] text-center border-r-2 border-black-40">
                 Rp. {price}
             </td>
-            <td className="g:flex md:flex hidden py-[10px] text-center px-[10px] border-r-2 border-black-40">
-                <div className="lg:flex md:flex hidden">
-                    <a href={`${link}`} target="_blank">
-                        Visit
-                    </a>
-                </div>
+            <td className="lg:flex md:flex hidden justify-center py-[10px] text-center px-[10px] border-r-2 border-black-40">
+                <a href={`${link}`} target="_blank">
+                    Visit
+                </a>
             </td>
-            <td className="flex items-center justify-center  text-center border-r-2 border-black-40">
+            <td className="w-[15%] text-center border-r-2 border-black-40">
                 <div className="flex items-center justify-center gap-x-4 py-[10px] px-[10px]">
                     <button onClick={() => setOpenModal("dismissible")}>
                         <div className="bg-[#00C531] p-[6px] text-black-40 rounded-md">
