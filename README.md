@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+## Tokopedia Play (Frontend) | Generasi GIGIH 3.0 by GoTo Impact Foundation
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+### Description
 
-## Available Scripts
+Tokopedia Play is video streaming web applicaiton. This project is final assingment of Generasi GIGIH 3.0 program by GoTo Impact Foundation. This is the frontend part of the project.
 
-In the project directory, you can run:
+### Feature
 
-### `npm start`
+Streaming a video, view product that related to the video and also comment on the video.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### How to install
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+You need to have Node.js installed on your machine.
 
-### `npm test`
+Here is the step to run this project on your local machine:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Clore Repository
 
-### `npm run build`
+```bash
+git clone https://github.com/Weitulezi/Gigih3.0_Tokopedia_Play_Frontend.git
+```
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Navigate to project directory
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
+cd Gigih3.0_Tokopedia_Play_Frontend
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Install dependencies
 
-### `npm run eject`
+```
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Run the app:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+```
+npm run start
+```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+or, to use a nodemon:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+npm run dev
+```
 
-## Learn More
+Don't forget to setup the API path. Go to path.js by navigating to (relative to this project directory)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```
+/src/constants/path.js
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+set the `const isProduction = false`.
 
-### Code Splitting
+Open the `http://localhost:3000` to view the app.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+To be able to see the content you also need to run the API server, go setup the API from the [backend](https://github.com/Weitulezi/Gigih3.0_Tokopedia_Play_Backend) repository.
 
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+The project is hosted online here https://gigih3-0-tokopedia-play-frontend.vercel.app/

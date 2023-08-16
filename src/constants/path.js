@@ -1,4 +1,4 @@
-const isProduction = true
+const isProduction = false
 
 const serverDomain = isProduction
     ? "https://gigih30tokopediaplaybackend-production.up.railway.app"
