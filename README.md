@@ -38,12 +38,6 @@ Run the app:
 npm run start
 ```
 
-or, to use a nodemon:
-
-```
-npm run dev
-```
-
 Don't forget to setup the API path. Go to path.js by navigating to (relative to this project directory)
 
 ```
