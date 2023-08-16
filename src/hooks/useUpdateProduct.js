@@ -21,21 +21,23 @@ const useUpdateProduct = (
     useEffect(() => {
         if (authData && isSubmitted) {
             const reqUpdateProduct = async () => {
-                const res = await fetch(`${serverDomain}/api/products`, {
-                    method: "PUT",
-                    headers: {
-                        Authorization: `Bearer ${authData.token}`,
-                        "Content-Type": "application/json",
+                const res = await fetch(
+                    `${serverDomain}/api/products/${productId}`,
+                    {
+                        method: "PUT",
+                        headers: {
+                            Authorization: `Bearer ${authData.token}`,
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                            title,
+                            image,
+                            price: Number(price),
+                            link,
+                            videoId,
+                        }),
                     },
-                    body: JSON.stringify({
-                        productId,
-                        title,
-                        image,
-                        price: Number(price),
-                        link,
-                        videoId,
-                    }),
-                })
+                )
                 const status = await res.status
                 const data = await res.json()
                 if (status === 200) {

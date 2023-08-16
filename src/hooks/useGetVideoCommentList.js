@@ -7,7 +7,7 @@ const useGetVideoCommentList = (videoId, setComments) => {
             console.log("Get comments")
             const getComments = async () => {
                 const res = await fetch(
-                    `${serverDomain}/api/comments?video=${videoId}`,
+                    `${serverDomain}/api/videos/${videoId}/comments`,
                 )
                 const status = await res.status
                 const data = await res.json()

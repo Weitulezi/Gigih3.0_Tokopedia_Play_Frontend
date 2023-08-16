@@ -54,7 +54,7 @@ const DesktopNavigation = () => {
                     <Link to="/dashboard">
                         <div className="flex items-center gap-x-[4px] py-[3px] px-[10px] rounded-[8px] ">
                             <h3 className="font-bold text-[14px] text-white">
-                                Dashboard
+                                {authData.user.username}
                             </h3>
                             <span className="text-[18px] text-white">
                                 <AiOutlineUser />

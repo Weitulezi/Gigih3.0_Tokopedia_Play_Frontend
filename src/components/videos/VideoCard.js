@@ -12,7 +12,8 @@ const VideoCard = ({ videoId, title, thumbnail }) => {
                     <img
                         className="w-[500px]  object-cover"
                         src={`${thumbnail}`}
-                        alt=""
+                        alt={title}
+                        loading="lazy"
                     />
                 </div>
                 <div className="w-full absolute bottom-0 left-0 px-[8px] py-[5px] bg-black-0.6">

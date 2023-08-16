@@ -17,18 +17,21 @@ const useUpdateProfile = (
         if (authData && isSubmitted) {
             const updateProfile = async () => {
                 console.log("Run")
-                const res = await fetch(`${serverDomain}/api/users`, {
-                    method: "PUT",
-                    headers: {
-                        Authorization: `Bearer ${authData.token}`,
-                        "Content-Type": "application/json",
+                const res = await fetch(
+                    `${serverDomain}/api/users/${authData.user._id}`,
+                    {
+                        method: "PUT",
+                        headers: {
+                            Authorization: `Bearer ${authData.token}`,
+                            "Content-Type": "application/json",
+                        },
+                        body: JSON.stringify({
+                            username,
+                            email,
+                            password,
+                        }),
                     },
-                    body: JSON.stringify({
-                        username,
-                        email,
-                        password,
-                    }),
-                })
+                )
                 const status = await res.status
                 const data = await res.json()
                 console.log(data)

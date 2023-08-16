@@ -7,7 +7,7 @@ const useGetVideoProductList = (videoId, setProducts, setLoading) => {
             setLoading(true)
             const getProducts = async () => {
                 const res = await fetch(
-                    `${serverDomain}/api/products?video=${videoId}`,
+                    `${serverDomain}/api/videos/${videoId}/products`,
                 )
 
                 const status = await res.status
