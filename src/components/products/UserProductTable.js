@@ -27,8 +27,10 @@ const UserProductTable = () => {
                                 <th className="w-[25%] py-[10px] text-center px-[10px] border-r-2 border-black-40">
                                     Price
                                 </th>
-                                <th className="lg:block md:block hidden py-[10px] text-center px-[10px] border-r-2 border-black-40">
-                                    Link
+                                <th className="lg:flex md:flex justify-center hidden py-[10px] text-center px-[10px] border-r-2 border-black-40">
+                                    <div className="lg:flex md:flex hidden">
+                                        Link
+                                    </div>
                                 </th>
                                 <th className="w-[11%] py-[10px] text-center px-[10px] ">
                                     Action

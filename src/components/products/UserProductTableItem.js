@@ -29,22 +29,26 @@ const UserProductTableItem = ({
             <td className="py-[10px] px-[10px] text-center border-r-2 border-black-40">
                 Rp. {price}
             </td>
-            <td className="lg:block md:block hidden py-[10px] px-[10px] text-center border-r-2 border-black-40">
-                <a href={`${link}`} target="_blank">
-                    Visit
-                </a>
+            <td className="g:flex md:flex hidden py-[10px] text-center px-[10px] border-r-2 border-black-40">
+                <div className="lg:flex md:flex hidden">
+                    <a href={`${link}`} target="_blank">
+                        Visit
+                    </a>
+                </div>
             </td>
-            <td className="flex items-center justify-center gap-x-4 py-[10px] px-[10px] text-center border-r-2 border-black-40">
-                <button onClick={() => setOpenModal("dismissible")}>
-                    <div className="bg-[#00C531] p-[6px] text-black-40 rounded-md">
-                        <AiOutlineEdit />
-                    </div>
-                </button>
-                <button onClick={(e) => setDeleteProduct(true)}>
-                    <div className="bg-red-600 text-white p-[6px]  rounded-md">
-                        <RiDeleteBinLine />
-                    </div>
-                </button>
+            <td className="flex items-center justify-center  text-center border-r-2 border-black-40">
+                <div className="flex items-center justify-center gap-x-4 py-[10px] px-[10px]">
+                    <button onClick={() => setOpenModal("dismissible")}>
+                        <div className="bg-[#00C531] p-[6px] text-black-40 rounded-md">
+                            <AiOutlineEdit />
+                        </div>
+                    </button>
+                    <button onClick={(e) => setDeleteProduct(true)}>
+                        <div className="bg-red-600 text-white p-[6px]  rounded-md">
+                            <RiDeleteBinLine />
+                        </div>
+                    </button>
+                </div>
             </td>
             <EditProductModal
                 setOpenModal={setOpenModal}

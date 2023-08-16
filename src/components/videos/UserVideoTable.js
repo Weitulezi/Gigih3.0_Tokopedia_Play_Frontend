@@ -22,8 +22,10 @@ const UserVideoTable = () => {
                                 <th className="py-[10px] text-left px-[10px] border-r-2 border-black-40">
                                     Title
                                 </th>
-                                <th className="lg:block md:block hidden py-[10px] text-center px-[10px] border-r-2 border-black-40">
-                                    Embed Id
+                                <th className="g:flex md:flex hidden py-[10px] text-center px-[10px] border-r-2 border-black-40">
+                                    <div className="lg:flex md:flex hidden">
+                                        Embed Id
+                                    </div>
                                 </th>
                                 <th className="py-[10px] text-center px-[10px] ">
                                     Action
